@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-ivory: #F7F3EA;
+    --color-cream: #FFF9F0;
+    --color-warm-white: #FFFCF7;
+    --color-stone: #E9E3D8;
+    --color-charcoal: #191919;
+    --color-cobalt: #3155FF;
+    --color-electric-blue: #4169FF;
+    --color-coral: #F05A5A;
+    --color-orange: #F47A38;
+    --color-peach: #FFC4A8;
+    --color-pink: #F3A8C7;
+    --color-lime: #C8FF38;
+    --color-purple: #7856FF;
+    --color-lavender: #CFC4FF;
+    --color-emerald: #25B889;
+    --color-mint: #BFEBD9;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }
+}
+
+/* Elite Typography Definitions */
+.font-display {
+  font-family: 'Syne', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.font-editorial {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-sans-ui {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Subtle paper texture overlay */
+.paper-grain {
+  background-image: radial-gradient(rgba(25, 25, 25, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Exact tight leading for large display */
+.leading-display {
+  line-height: 0.88;
+}
+
+.leading-headline {
+  line-height: 0.94;
+}
+
+/* Easing curves */
+.ease-supreme {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* MARQUEE ANIMATIONS (For Portfolio Wall & Relatable Moving Reels) */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes pan-slow-reel {
+  0% {
+    transform: scale(1.04) translateX(0%);
+  }
+  50% {
+    transform: scale(1.08) translateX(-15%);
+  }
+  100% {
+    transform: scale(1.04) translateX(0%);
+  }
+}
+
+.animate-marquee {
+  display: flex !important;
+  width: max-content !important;
+  animation: marquee 24s linear infinite !important;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-pan-reel {
+  animation: pan-slow-reel 18s ease-in-out infinite;
+}
